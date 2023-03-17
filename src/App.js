@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+// v6 
 import {
   Header, 
   Home,
@@ -27,23 +28,18 @@ function App() {
   }
 
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <Switch>
-        <Route path="/base">
-          <Base addBase={addBase} pizza={pizza} />
+      <Routes>
+        <Route path="/" element={ <Home /> } /> 
+        <Route path="/base" element={<Base addBase={addBase} pizza={pizza} />} /> 
+        <Route path="/toppings" element={
+           <Toppings addTopping={addTopping} pizza={pizza} />
+        }>  
         </Route>
-        <Route path="/toppings">
-          <Toppings addTopping={addTopping} pizza={pizza} />
-        </Route>
-        <Route path="/order">
-          <Order pizza={pizza} />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </>
+        <Route path="/order" element={<Order pizza={pizza} />} /> 
+      </Routes>
+    </BrowserRouter>
   );
 }
 
