@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-// v6 
 import {
   Header, 
   Home,
@@ -9,6 +8,9 @@ import {
   Order
 } from './components';
 
+// home컴포넌트에 모션을 넣기 위해 다음과 같이 셋팅
+// npm i framer-motion
+// import {motion} from 'framer-motion';
 
 function App() {
   const [pizza, setPizza] = useState({ base: "", toppings: [] });
@@ -44,3 +46,8 @@ function App() {
 }
 
 export default App;
+// git branch lesson-01-v6
+// git switch lesson-01-v6
+// git add .
+// git commit -m "react-router-dom v6 update"
+// git push --set-upstream origin lesson-01-v6
