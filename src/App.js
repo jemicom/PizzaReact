@@ -11,6 +11,7 @@ import {
  
 // keyframes : home.js 수정 
 // repeat : home.js 수정 
+// Base.js, Topping.js 버튼에도 적용하기 
 
 function App() {
   const [pizza, setPizza] = useState({ base: "", toppings: [] });

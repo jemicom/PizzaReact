@@ -26,6 +26,21 @@ const nextVariants = {
   } 
 }
 
+
+// yoyo : repeat 지정
+const buttonVariantsRepeat = {
+  hover: {
+    scale: 1.1,
+    textShadow: "0px 0px 8px rgb(255,255,255)",
+    boxShadow: "0px 0px 8px rgb(255,255,255)",
+    transition: {
+      duration: 0.3,
+      yoyo:Infinity 
+      // 왕복 횟수 , Infinity
+    }
+  }
+}
+
 const Toppings = ({ addTopping, pizza }) => {
   let toppings = ['파인애플 8개/40g', '올리브 20g', '페퍼로니 8개/20g', '베이컨 8개/24g', '올리브 10/24g', '치즈 100g', '토마토 소스 10g'];
 
@@ -54,11 +69,8 @@ const Toppings = ({ addTopping, pizza }) => {
 
       <Link to="/order">
       <motion.button
-           whileHover={{ 
-            scale: 1.1, 
-            textShadow: "0px 0px 8px rgb(255,255,255)",
-            boxShadow: "0px 0px 8px rgb(255,255,255)",
-          }}
+           variants={buttonVariantsRepeat}
+           whileHover="hover"
         >
           주문
         </motion.button>

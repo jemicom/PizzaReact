@@ -25,6 +25,20 @@ const nextVariants = {
   } 
 }
 
+// yoyo : repeat 지정
+const buttonVariantsRepeat = {
+  hover: {
+    scale: 1.1,
+    textShadow: "0px 0px 8px rgb(255,255,255)",
+    boxShadow: "0px 0px 8px rgb(255,255,255)",
+    transition: {
+      duration: 0.3,
+      yoyo:Infinity 
+      // 왕복 횟수 , Infinity
+    }
+  }
+}
+
 const Base = ({ addBase, pizza }) => {
   const bases = ['클래식', '씬 & 크리스피', '프리미엄'];
 
@@ -56,11 +70,8 @@ const Base = ({ addBase, pizza }) => {
         >
           <Link to="/toppings">
             <motion.button
-               whileHover={{ 
-                scale: 1.1, 
-                textShadow: "0px 0px 8px rgb(255,255,255)",
-                boxShadow: "0px 0px 8px rgb(255,255,255)",
-              }}
+               variants={buttonVariantsRepeat}
+               whileHover="hover"
             >
               다음
             </motion.button>
