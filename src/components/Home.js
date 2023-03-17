@@ -2,17 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {motion} from 'framer-motion';
 
-// header, home, base 컴포넌트에 transition 옵션 추가 
+// header, home, base 컴포넌트에 variants 옵션 추가 
+// 변수로 별도로 빼고 객체대신 ""속성으로 내부 숨겨진 속성을 사용한다.
+
 
 const Home = () => {
   return (
      <div className="home container">
-      {/* <motion.div className="box11"  
-              initial={{ y : '-100vw' }}
-              animate={{ y : 0}}
-              transition={{ delay:0.5, type:'spring', stiffness :120}}  
-              whileHover={{ scale:1.2,  color:"pink"}}  
-        >box11</motion.div> */}
          <motion.div className="home container"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

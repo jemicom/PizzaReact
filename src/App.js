@@ -9,7 +9,8 @@ import {
 } from './components';
 
  
-// Toppings.js, Base.js : whileHover 추가 
+// Toppings, Base.js , Order.js : varants 추가 
+// 모두 같은 variants 이므로 복사하여 사용할 것 
 
 function App() {
   const [pizza, setPizza] = useState({ base: "", toppings: [] });

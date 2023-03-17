@@ -2,13 +2,39 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {motion} from 'framer-motion';
 
-// Toppings.js, Base.js : whileHover 추가 
+
+// Toppings, Base.js , Order.js : varants 추가 
+const containerVariants = {
+  start: { 
+    opacity: 0, 
+    x: '100vw' 
+  },
+  end: { 
+    opacity: 1, 
+    x: 0,
+    transition: { type: 'spring', delay: 0.5 }
+  },
+};
+
+const nextVariants = {
+  start: { 
+    x: '-100vw' 
+  },
+  end: {
+    x: 0,
+    transition: { type: 'spring', stiffness: 120 }
+  } 
+}
 
 const Toppings = ({ addTopping, pizza }) => {
   let toppings = ['파인애플 8개/40g', '올리브 20g', '페퍼로니 8개/20g', '베이컨 8개/24g', '올리브 10/24g', '치즈 100g', '토마토 소스 10g'];
 
   return (
-    <div className="toppings container">
+    <motion.div className="toppings container"
+          variants={containerVariants}
+          initial="start"
+          animate="end"
+    >
       
       <h3>Step 2: 토핑을 선택하세요. </h3>
       <ul>
@@ -38,7 +64,7 @@ const Toppings = ({ addTopping, pizza }) => {
         </motion.button>
       </Link>
 
-    </div>
+    </motion.div>
   )
 }
 
