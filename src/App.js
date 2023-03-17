@@ -9,8 +9,8 @@ import {
 } from './components';
 
  
-// Toppings, Base.js , Order.js : varants 추가 
-// 모두 같은 variants 이므로 복사하여 사용할 것 
+// keyframes : home.js 수정 
+// repeat : home.js 수정 
 
 function App() {
   const [pizza, setPizza] = useState({ base: "", toppings: [] });
