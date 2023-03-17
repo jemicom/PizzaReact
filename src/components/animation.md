@@ -42,6 +42,16 @@
               animate={{ x : 0}}
               transition={{ delay:0.5, type:'tween|spring', stiffness :120}}
         >box10</motion.div>
+
+// whileHover
+// Toppings.js, Base.js 수정 
+<motion.div className="box11"  
+              initial={{ y : '-100vw',}}
+              animate={{ y : 0}}
+              transition={{ delay:0.5, type:'spring', stiffness :120}}  
+              whileHover={{ scale:1.2,  color:"pink"}}  
+        >box11</motion.div>
+> originX : 중심점 변경        
 ```
 
 # animation test1

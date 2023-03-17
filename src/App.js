@@ -8,8 +8,8 @@ import {
   Order
 } from './components';
 
-// header, home, base 컴포넌트에 transition 옵션 추가  
-
+ 
+// Toppings.js, Base.js : whileHover 추가 
 
 function App() {
   const [pizza, setPizza] = useState({ base: "", toppings: [] });

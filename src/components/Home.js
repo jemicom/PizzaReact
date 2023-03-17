@@ -7,6 +7,12 @@ import {motion} from 'framer-motion';
 const Home = () => {
   return (
      <div className="home container">
+      {/* <motion.div className="box11"  
+              initial={{ y : '-100vw' }}
+              animate={{ y : 0}}
+              transition={{ delay:0.5, type:'spring', stiffness :120}}  
+              whileHover={{ scale:1.2,  color:"pink"}}  
+        >box11</motion.div> */}
          <motion.div className="home container"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

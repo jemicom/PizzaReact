@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {motion} from 'framer-motion';
 
-// header, home, base 컴포넌트에 transition 옵션 추가 
+// Toppings.js, Base.js : whileHover 추가 
 
 const Base = ({ addBase, pizza }) => {
   const bases = ['클래식', '씬 & 크리스피', '프리미엄'];
@@ -19,9 +19,12 @@ const Base = ({ addBase, pizza }) => {
         {bases.map(base => {
           let spanClass = pizza.base === base ? 'active' : '';
           return (
-            <li key={base} onClick={() => addBase(base)}>
+            <motion.li key={base} onClick={() => addBase(base)}
+                whileHover={{ scale: 1.3, originX: 0, color: 'hotpink' }}
+                transition={{ type: 'spring', stiffness: 300 }}
+            >
               <span className={spanClass}>{ base }</span>
-            </li>
+            </motion.li>
           )
         })}
       </ul>
