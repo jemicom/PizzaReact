@@ -8,9 +8,8 @@ import {
   Order
 } from './components';
 
-// home컴포넌트에 모션을 넣기 위해 다음과 같이 셋팅
-// npm i framer-motion
-// import {motion} from 'framer-motion';
+// header, home, base 컴포넌트에 transition 옵션 추가  
+
 
 function App() {
   const [pizza, setPizza] = useState({ base: "", toppings: [] });

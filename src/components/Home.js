@@ -2,12 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {motion} from 'framer-motion';
 
+// header, home, base 컴포넌트에 transition 옵션 추가 
+
 const Home = () => {
   return (
      <div className="home container">
          <motion.div className="home container"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1.5 }}
           >
             <h2>Welcome to Pizza Joint</h2>
             <Link to="/base">

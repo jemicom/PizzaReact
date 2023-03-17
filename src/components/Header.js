@@ -2,6 +2,8 @@ import React from 'react';
 import { FaPizzaSlice } from "react-icons/fa";
 import {motion} from 'framer-motion';
 
+// header, home, base 컴포넌트에 transition 옵션 추가 
+
 const Header = () => {
   return (
     <header>
@@ -19,8 +21,10 @@ const Header = () => {
         </svg> */}
       </div>
       <motion.div className="title"
-        initial={{ position: 'relative', top: -250}}
-        animate={{ top: -10 }}
+        initial={{ y: -250}}
+        animate={{ y: -10 }}
+        // transition={{ delay: 0.2, type: 'spring', stiffness: 120 }}
+        transition={{ delay: 0.2, type: 'tween', stiffness: 120 }}
       >
         <h1>Pizza React</h1>
       </motion.div>
