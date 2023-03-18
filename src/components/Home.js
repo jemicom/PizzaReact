@@ -9,7 +9,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            <h2>Welcome to Pizza Joint</h2>
+            <h2>  Pizza  React</h2>
             <Link to="/base">
               <motion.button
                 animate={{  }}
