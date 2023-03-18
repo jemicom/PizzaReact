@@ -56,7 +56,9 @@ const Home = () => {
         animate="end" 
         exit="exit"
       >
-            <h2>Welcome to Pizza Joint</h2>
+            <h2>
+                 Pizza React
+            </h2>
             <Link to="/base">
               
               <motion.button
