@@ -31,33 +31,37 @@ const buttonVariantsRepeat = {
     }
   }
 }
-
-/// 시간차로 추가 
-const containerVariants = {
-  hidden: { 
-    opacity: 0, 
+const box14Variants ={
+  start :{ 
+      x : '100vw',
+      opacity:0
   },
-  visible: { 
-    opacity: 1, 
-    transition: { delay: 1.5, duration: 1.5 }
-  },
-  exit: {
-    x: "-100vh",
-    transition: { ease: 'easeInOut' }
+  end : { 
+    x : 0,
+    opacity:1,
+    transition:{ 
+      delay:1.5, 
+      duration:1.5
+    }
   }
-};
-
+}
 const Home = () => {
-   
+   const [hide, setHide] = useState(true);
+
   return (
-    <motion.div className="home container"
-        variants={containerVariants}
-        initial="start"
-        animate="end" 
-        exit="exit"
-      >
+    
+     <div className="home container">
+      <AnimatePresence>
+        { hide && 
+          <motion.div className="home container"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1.5 }}
+
+            exit={{x:'-100vw'}}
+          >
             <h2>Welcome to Pizza Joint</h2>
-            <Link to="/base">
+            <Link to="/base" onMouseEnter={()=>setHide(false)}>
               
               <motion.button
                 variants={buttonVariantsRepeat}
@@ -67,8 +71,11 @@ const Home = () => {
                 주문하러 가기
               </motion.button>
             </Link>
-      </motion.div> 
-    
+          </motion.div>
+          }
+          </AnimatePresence> 
+     </div>
+     
   )
 }
 

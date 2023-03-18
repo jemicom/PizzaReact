@@ -14,10 +14,6 @@ const containerVariants = {
     x: 0,
     transition: { type: 'spring', delay: 0.5 }
   },
-  exit: {
-    x: "-100vh",
-    transition: { ease: 'easeInOut' }
-  }
 };
 
 const nextVariants = {
@@ -53,8 +49,6 @@ const Toppings = ({ addTopping, pizza }) => {
           variants={containerVariants}
           initial="start"
           animate="end"
-
-          exit="exit"
     >
       
       <h3>Step 2: 토핑을 선택하세요. </h3>

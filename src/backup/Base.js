@@ -13,9 +13,8 @@ const containerVariants = {
     x: 0,
     transition: { type: 'spring', delay: 0.5 }
   },
-  exit: {
-    x: "-100vh",
-    transition: { ease: 'easeInOut' }
+  exit:{
+    x : '-100vw'
   }
 };
 
@@ -44,10 +43,14 @@ const buttonVariantsRepeat = {
 }
 
 const Base = ({ addBase, pizza }) => {
+  const [exit, setExit] = useState(true);
+
   const bases = ['클래식', '씬 & 크리스피', '프리미엄'];
 
   return (
-     <motion.div className="base container"
+    <AnimatePresence>
+      {
+        exit &&  <motion.div className="base container"
           variants={containerVariants}
           initial="start"
           animate="end"
@@ -78,7 +81,9 @@ const Base = ({ addBase, pizza }) => {
               <Link to="/toppings">
                 <motion.button
                   variants={buttonVariantsRepeat}
-                  whileHover="hover" 
+                  whileHover="hover"
+
+                  onMouseEnter={()=>setExit(false)}
                 >
                   다음
                 </motion.button>
@@ -87,7 +92,8 @@ const Base = ({ addBase, pizza }) => {
           )}
           
         </motion.div>
-     
+    }
+    </AnimatePresence>
   )
 }
 
