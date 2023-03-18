@@ -11,7 +11,8 @@ import {motion, AnimatePresence} from 'framer-motion';
  
 // AnimatePresence 
 // 사라질때 Animate 적절히 적용하기 위한 기술
-// animation.md 참고 home, order 연습 구현 후 라우트 적용 안됨 
+// animation.md 참고 home, order 연습 구현 후 라우트 적용
+/////////// 라우트는 index.js를 이용하여 최상위 콘텍스트에 구현해야 함 
 // 레이아웃 적용하면 될 것 같음
 // onClick 일때 동작하지 않고 onMouseEnter일때 동작함 
 // 각 페이지 하단에 연습 파일 test 백업 후 복원
