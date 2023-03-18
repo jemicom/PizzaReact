@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {motion, AnimatePresence} from 'framer-motion';
+import Loader  from './Loader'
 
 // keyframes : variants 를 내에 키프레임을 배열로 사용 
 const buttonVariants = {
@@ -47,6 +48,30 @@ const containerVariants = {
   }
 };
 
+// svg 애니 추가 
+const svgVariants = {
+  hidden: { rotate: -180 },
+  visible: { 
+    rotate: 0,
+    transition: { duration : 1 }
+  },
+}
+
+const pathVariants = {
+  hidden: {
+    opacity: 0,
+    pathLength: 0,
+  },
+  visible: {
+    opacity: 1,
+    pathLength: 1,
+    transition: { 
+      duration: 2,
+      ease: "easeInOut",
+    }
+  }
+};
+
 const Home = () => {
    
   return (
@@ -56,9 +81,25 @@ const Home = () => {
         animate="end" 
         exit="exit"
       >
+
+            <motion.svg className="pizza-svg" 
+                        variants={svgVariants}
+                        initial="hidden"
+                        animate="visible"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                <motion.path
+                  fill="none"
+                  d="M40 40 L80 40 C80 40 80 80 40 80 C40 80 0 80 0 40 C0 40 0 0 40 0Z"
+                  variants={pathVariants}
+                />
+                <motion.path
+                  fill="none"
+                  d="M50 30 L50 -10 C50 -10 90 -10 90 30 Z"
+                  variants={pathVariants}
+                />
+            </motion.svg>
             <h2>Pizza React</h2>
             <Link to="/base">
-              
               <motion.button
                 variants={buttonVariantsRepeat}
                 animate="visible"
@@ -67,6 +108,7 @@ const Home = () => {
                 주문하러 가기
               </motion.button>
             </Link>
+            <Loader />
       </motion.div> 
     
   )

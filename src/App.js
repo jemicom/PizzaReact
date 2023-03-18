@@ -9,13 +9,14 @@ import {
 } from './components';
 import {motion, AnimatePresence} from 'framer-motion';
 import Modal from './components/Modal'; 
-// 모달 컴포넌트 추가 
+ 
+// home 컴포넌트에 svg , Loader , css 추가 
 
 function App() {
   const location = useLocation();
   const [pizza, setPizza] = useState({ base: "", toppings: [] });
   const [showModal, setShowModal] = useState(false);
-  // 모달  state => Order.js 추가
+   
 
   const addBase = (base) => {
     setPizza({ ...pizza, base })

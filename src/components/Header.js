@@ -8,7 +8,6 @@ const Header = () => {
   return (
     <header>
       <div className="logo">
-        <FaPizzaSlice color="red" style={{fontSize:"30px"}}/>
         {/* <svg className="pizza-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
           <path
             fill="none"
@@ -26,10 +25,19 @@ const Header = () => {
         // transition={{ delay: 0.2, type: 'spring', stiffness: 120 }}
         transition={{ delay: 0.2, type: 'tween', stiffness: 120 }}
       >
-        <h1>Pizza React</h1>
+        <h1>
+          <FaPizzaSlice color="red" 
+                        style={{
+                          marginRight:"15px", 
+                          transform :'rotate(-10deg)'
+                        }}
+          /> 
+          Pizza React
+        </h1>
       </motion.div>
     </header>
   )
 }
 
 export default Header;
+ 

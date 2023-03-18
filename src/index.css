@@ -78,7 +78,7 @@ header h1 {
   padding-bottom: 10px;
 }
 
-header .pizza-svg {
+.home .pizza-svg {
   width: 80px;
   overflow: visible;
   stroke: #fff;
@@ -155,4 +155,13 @@ li span.active::before {
 .modal p {
   color: #444;
   font-weight: bold;
+}
+
+/* loader */
+.loader {
+  width: 10px;
+  height: 10px;
+  margin: 40px auto;
+  border-radius: 50%;
+  background: #fff;
 }
