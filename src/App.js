@@ -7,19 +7,15 @@ import {
   Toppings,
   Order
 } from './components';
-import {motion, AnimatePresence} from 'framer-motion'; 
- 
-// AnimatePresence 
-// 사라질때 Animate 적절히 적용하기 위한 기술
-// animation.md 참고 home, order 연습 구현 후 라우트 적용 안됨 
-// 레이아웃 적용하면 될 것 같음
-// onClick 일때 동작하지 않고 onMouseEnter일때 동작함 
-// 각 페이지 하단에 연습 파일 test 백업 후 복원
-// Order.js
+import {motion, AnimatePresence} from 'framer-motion';
+import Modal from './components/Modal'; 
+// 모달 컴포넌트 추가 
 
 function App() {
   const location = useLocation();
   const [pizza, setPizza] = useState({ base: "", toppings: [] });
+  const [showModal, setShowModal] = useState(false);
+  // 모달  state => Order.js 추가
 
   const addBase = (base) => {
     setPizza({ ...pizza, base })
@@ -38,16 +34,19 @@ function App() {
   return (
     <>
       <Header />
+      <Modal showModal={showModal} setShowModal={setShowModal} />
       <AnimatePresence>
-      <Routes location={location} key={location.key}>
-        <Route path="/" element={ <Home /> } /> 
-        <Route path="/base" element={<Base addBase={addBase} pizza={pizza} />} /> 
-        <Route path="/toppings" element={
-           <Toppings addTopping={addTopping} pizza={pizza} />
-        }>  
-        </Route>
-        <Route path="/order" element={<Order pizza={pizza} />} /> 
-      </Routes>
+        <Routes location={location} key={location.key}>
+          <Route path="/" element={ <Home /> } /> 
+          <Route path="/base" element={<Base addBase={addBase} pizza={pizza} />} /> 
+          <Route path="/toppings" element={
+            <Toppings addTopping={addTopping} pizza={pizza} />
+          }>  
+          </Route>
+          <Route path="/order" element={
+            <Order pizza={pizza} setShowModal={setShowModal} />} 
+          /> 
+        </Routes>
       </AnimatePresence>
     </>
   );

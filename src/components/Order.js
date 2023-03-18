@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const containerVariants = {
@@ -36,8 +36,14 @@ const childVariants = {
   }
 }
 
-const Order = ({ pizza }) => { 
-   
+const Order = ({ pizza, setShowModal }) => { 
+
+  // Order가 호출된 후 backdrop 을 어둡게 조성 
+  // index.css 디자인 있음 , modal 디자인 
+  useEffect(() => {
+    setTimeout(() => setShowModal(true), 5000);
+  }, [setShowModal]);
+
   return (
     <motion.div className="container order"
       variants={containerVariants}
