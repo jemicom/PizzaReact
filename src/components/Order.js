@@ -22,6 +22,10 @@ const containerVariants = {
        // when: "beforeChildren:afterChildren"
     }
   },
+  exit:{
+    opacity: 0, 
+    x: '-100vw',
+  }
 };
 
 // Order 컴포넌트만 추가 
@@ -49,6 +53,7 @@ const Order = ({ pizza, setShowModal }) => {
       variants={containerVariants}
       initial="start"
       animate="end"
+      exit="exit"
     >
       <motion.h2 >주문 감사합니다.</motion.h2>
       <motion.p variants={childVariants}> 주문하신 상품은  {pizza.base} pizza 입니다.</motion.p>

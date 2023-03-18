@@ -46,10 +46,17 @@ const Modal = ({ showModal, setShowModal }) => {
         >
           <motion.div className="modal"
               variants={modal}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
             >
               <p>피자를 추가하시겠습니까?</p>
               <Link to="/">
-                <button onClick={()=>setShowModal(false)}>새로운 피자 주문</button>
+                <button>새로운 피자 주문</button>
+                {/* <button onClick={()=>setShowModal(false)}>새로운 피자 주문</button>  */}
+                    {/* 다시 시작 메뉴가 뜰때 중복되는 문제 발생하므로 
+                    app 수정 해야 함 
+                */}
               </Link>
             </motion.div>
         </motion.div>
